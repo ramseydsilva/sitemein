@@ -40,25 +40,28 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://siteme.in">Site Me In!</a>
+          <a class="navbar-brand" href="/">Site Me In!</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="http://ramseydsilva.com">Ramsey</a></li>
-            <li><a href="http://blog.ramseydsilva.com">Blog</a></li>
-          </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="http://ramseydsilva.com">Ramsey</a></li>
+                <li><a href="http://blog.ramseydsilva.com">Blog</a></li>
+            </ul>
+	    {% include "includes/login_buttons.html" %}
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <div class="container-fluid">
+	{% block main %}
         <div class="row"><div class="col-lg-7 col-md-7 col-sm-7">
         <p class="lead">
             Need a site? Please fill the form below
         </p>
         </div></div>
+	{% endblock %}
     </div> <!-- /container -->
 
     <script>

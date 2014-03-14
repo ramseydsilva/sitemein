@@ -1,0 +1,9 @@
+<ul class="nav navbar-nav navbar-right">
+{% if user.is_anonymous %}
+    <li><a class="header-links register" href="{% url "register" %}?next={% if next %}{{ next }}{% else %}{{ request.path }}{% endif %}">Register</a></li>
+    <li><a class="header-links login" href="{% url "login" %}?next={% if next %}{{ next }}{% else %}{{ request.path }}{% endif %}">Login</a></li>
+{% else %}
+    <li><a class="cursor"">Welcome {{ user.username }}</a></li>
+    <li><a class="header-links logout" href="{% url "logout" %}?next={% if next %}{{ next }}{% else %}{{ request.path }}{% endif %}">Logout</a></li>
+{% endif %}
+</ul>
