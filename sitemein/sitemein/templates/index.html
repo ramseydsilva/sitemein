@@ -1,1 +1,46 @@
 {% extends "base.html" %}
+
+{% block main %}
+    <p class="lead">Hello there. Please fill out the form below to generate your site</p>
+    <form role="form" action="{% url 'create_site' %}" method="post">{% csrf_token %}
+        <fieldset>
+            <div class="form-group {% if errors.title %}has-error has-feedback{% endif %}">
+            <label for="titleInput">Title</label>
+            <input type="text" class="form-control" id="titleInput" placeholder="Enter a Title for your Site" name="title" value="{{ title }}">
+            {% if errors.title %}
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                <p class="help-block">{{ errors.title }}</p>
+            {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="contentInput">Content/Description</label>
+                <textarea class="form-control" id="contentInput" rows="5" placeholder="Enter some content or a quick description of your site" name="content">{{ content }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="imageInput">Image</label>
+                <input type="url" class="form-control" id="imageInput" placeholder="Enter a link to your image" name="image_url" value="{{ image_url }}">
+                <p class="help-block">Use <a href="http://imgur.com" target="blank">Imgur</a> to upload your image(s), and paste your image link here. Alternately, 
+                find an image online, right click, copy image url and paste it here</p>
+            </div>
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" name="name" value="{{ name }}">
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" name="email" value="{{ email }}">
+            </div>
+            <div class="form-group">
+                <label for="typeInput">Select type of site</p>
+                <select class="form-control" id="typeInput" name="site_type">
+                    <option value="one-page-site" {% if site_type == "one-page-site" %}selected{% endif %}>One page site</option>
+                    <option value="small-site" {% if site_type == "small-site" %}selected{% endif %}>Small site (1-5 pages)</option>
+                    <option value="blog" {% if site_type == "blog" %}selected{% endif %}>Blog</option>
+                    <option value="online-store" {% if site_type == "online-store" %}selected{% endif %}>Online store</option>
+                    <option value="custom" {% if site_type == "custom" %}selected{% endif %}>Custom</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+{% endblock %}

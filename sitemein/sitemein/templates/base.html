@@ -7,12 +7,9 @@
     <meta name="description" content="Ramsey D'silva's Personal Site">
     <meta name="author" content="Ramsey D'silva">
 
-    <!-- Le styles -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -55,13 +52,9 @@
     </nav>
 
     <div class="container-fluid">
-	{% block main %}
-        <div class="row"><div class="col-lg-7 col-md-7 col-sm-7">
-        <p class="lead">
-            Need a site? Please fill the form below
-        </p>
-        </div></div>
-	{% endblock %}
+        <div class="main-content">
+            {% block main %}{% endblock %}
+        </div>
     </div> <!-- /container -->
 
     <script>
