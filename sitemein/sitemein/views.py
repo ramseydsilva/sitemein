@@ -5,8 +5,12 @@ from .models import SiteRequest
 
 
 def home(request):
-    context = {}
+    context = {"home_page": True}
     return render_to_response("index.html", context, context_instance = RequestContext(request))
+
+def about(request):
+    context = {"about_page": True}
+    return render_to_response("about.html", context, context_instance = RequestContext(request))
 
 def create_site_success(request):
     context = {}

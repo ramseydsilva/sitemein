@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^$', 'sitemein.views.home', name='home'),
     url(r'^create-site/$', 'sitemein.views.create_site', name='create_site'),
     url(r'^create-site/success/$', 'sitemein.views.create_site_success', name='create_site_success'),
+    url(r'^about/$', 'sitemein.views.about', name='about'),
 
     # user views
     url(r'^logout/$', 'sitemein.user_views.logout_view', name='logout'),

@@ -44,8 +44,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="http://ramseydsilva.com">Ramsey</a></li>
-                <li><a href="http://blog.ramseydsilva.com">Blog</a></li>
+                <li class="{% if home_page %}active{% endif %}"><a href="{% url "home" %}">Home</a></li>
+                <li class="{% if about_page %}active{% endif %}"><a href="{% url "about" %}">About</a></li>
             </ul>
 	    {% include "includes/login_buttons.html" %}
         </div><!-- /.navbar-collapse -->
