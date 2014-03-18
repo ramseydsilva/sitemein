@@ -11,6 +11,8 @@ urlpatterns = patterns('',
     url(r'^create-site/$', 'sitemein.views.create_site', name='create_site'),
     url(r'^create-site/success/$', 'sitemein.views.create_site_success', name='create_site_success'),
     url(r'^about/$', 'sitemein.views.about', name='about'),
+    url(r'^features/$', 'sitemein.views.features', name='features'),
+    url(r'^price-list/$', 'sitemein.views.price_list', name='price_list'),
     url(r'^work/$', 'sitemein.views.work', name='work'),
 
     # user views

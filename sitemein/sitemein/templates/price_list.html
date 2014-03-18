@@ -1,0 +1,26 @@
+{% extends "features.html" %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <style>
+        ol.points { width: 400px; }
+        .price { float: right; display: block; }
+    </style>
+{% endblock %}
+
+{% block main %}
+<div class="content-block">
+    <p class="lead">
+        <span class="title">Price List</span>
+    </p>
+    <ol class="points lead">
+        <li>Single Page Site <span class="price">$20 - $50</span></li>
+        <li>5 Page Site <span class="price">$50 to $200</span></li>
+        <li>Blog <span class="price">$50 to $200</span></li>
+        <li>Shopping Cart <span class="price">$300</span></li>
+        <li>Custom <span class="price">Upto $500</span></li>
+    </ol>
+    <p class="lead">For further customization, we have a reasonable hourly fee.</p>
+</div>
+
+{% endblock %}

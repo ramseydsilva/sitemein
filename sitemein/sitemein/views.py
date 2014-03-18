@@ -5,15 +5,28 @@ from .models import SiteRequest
 
 
 def home(request):
-    context = {"home_page": True}
+    email = ""
+    if not request.user.is_anonymous():
+        email = request.user.email
+        user = request.user
+
+    context = {"home_page": True, "email": email}
     return render_to_response("index.html", context, context_instance = RequestContext(request))
+
+def features(request):
+    context = {"features_page": True}
+    return render_to_response("features.html", context, context_instance = RequestContext(request))
+
+def price_list(request):
+    context = {"price_list_page": True}
+    return render_to_response("price_list.html", context, context_instance = RequestContext(request))
 
 def about(request):
     context = {"about_page": True}
     return render_to_response("about.html", context, context_instance = RequestContext(request))
 
 def work(request):
-    sites = SiteRequest.objects.filter(published=True)
+    sites = SiteRequest.objects.filter(published=True).order_by("-published_date")
     context = {"work_page": True, "sites": sites}
     return render_to_response("work.html", context, context_instance = RequestContext(request))
 

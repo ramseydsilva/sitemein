@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<style>
+    .title { border-bottom: 1px solid black; width: 100; font-size: 26px; }
+    .points { margin: 0 0 15px 0; }
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="content-block">
+    <p class="lead">
+        <span class="title">Features</span>
+    </p>
+    <ol class="points lead">
+        <li>Clean, simple, elegant layout and design</li>
+        <li>Focus on SEO, includes google analytics</li>
+        <li>Social media integration</li>
+        <li>Latest and greatest technology</li>
+        <li>We manage everything, domain name registration to hosting</li>
+        <li>Admin section to self manage content</li>
+        <li>Infinite ability to customize</li>
+        <li>Knowledgeable, Friendly, Fast customer service</li>
+    </ol>
+</div>
+<div class="content-block">
+    <p class="lead">
+        <span class="title">Technology</span>
+    </p>
+    <ol class="points lead">
+        <li>Languages: HTML(5), CSS(3), Javascript, Python, Php</li>
+        <li>Frameworks: Wordpress, Django</li>
+        <li>Server: Ubuntu 12.04</li>
+    </ol>
+</div>
+{% endblock %}
