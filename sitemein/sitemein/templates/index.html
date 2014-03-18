@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <p class="lead">Hello there. Please fill out the form below to generate your site</p>
+<div class="content-block">
+    <p class="lead">Welcome to SiteMe.in, an automated website generation service. Fill out the form below to get started.</p>
     <form role="form" action="{% url 'create_site' %}" method="post">{% csrf_token %}
         <fieldset>
             <div class="form-group {% if errors.title %}has-error has-feedback{% endif %}">
@@ -43,4 +44,5 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </fieldset>
     </form>
+</div>
 {% endblock %}

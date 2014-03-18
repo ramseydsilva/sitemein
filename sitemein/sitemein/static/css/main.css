@@ -1,9 +1,9 @@
-.main-content {
+body {
+    background-color: black;
+}
+
+.content-block {
     background: rgba(255,255,255, 0.7);
     padding: 15px;
     margin-bottom: 30px;
-}
-
-body {
-    background-color: black;
 }

@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>SiteMe.in</title>
+    <title>SiteMe.in - An automated site generation service</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site Builder, Build your own site!">
+    <meta name="description" content="An automated website generation service pioneered by web experts.">
     <meta name="author" content="Ramsey D'silva">
 
     <!-- Latest compiled and minified CSS -->
@@ -46,6 +46,7 @@
             <ul class="nav navbar-nav">
                 <li class="{% if home_page %}active{% endif %}"><a href="{% url "home" %}">Home</a></li>
                 <li class="{% if about_page %}active{% endif %}"><a href="{% url "about" %}">About</a></li>
+                <li class="{% if work_page %}active{% endif %}"><a href="{% url "work" %}">Our Work</a></li>
             </ul>
 	    {% include "includes/login_buttons.html" %}
         </div><!-- /.navbar-collapse -->

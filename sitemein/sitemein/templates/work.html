@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block main %}
+<div class="content-block">
+    {% for site in sites %}
+        <a href="{{ site.link }}" target="blank">
+            {% thumbnail site.thumb "200" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"><br/>
+            {% endthumbnail %}
+            {{ site }}
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

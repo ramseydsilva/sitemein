@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
@@ -9,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^create-site/$', 'sitemein.views.create_site', name='create_site'),
     url(r'^create-site/success/$', 'sitemein.views.create_site_success', name='create_site_success'),
     url(r'^about/$', 'sitemein.views.about', name='about'),
+    url(r'^work/$', 'sitemein.views.work', name='work'),
 
     # user views
     url(r'^logout/$', 'sitemein.user_views.logout_view', name='logout'),
@@ -24,3 +27,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('', (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.STATIC_ROOT, 'show_indexes': True}))
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

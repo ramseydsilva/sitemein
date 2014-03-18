@@ -12,6 +12,11 @@ def about(request):
     context = {"about_page": True}
     return render_to_response("about.html", context, context_instance = RequestContext(request))
 
+def work(request):
+    sites = SiteRequest.objects.filter(published=True)
+    context = {"work_page": True, "sites": sites}
+    return render_to_response("work.html", context, context_instance = RequestContext(request))
+
 def create_site_success(request):
     context = {}
     return render_to_response("create_site_success.html", context, context_instance = RequestContext(request))
